@@ -1,0 +1,3 @@
+root;destdir
+
+DEL;.*

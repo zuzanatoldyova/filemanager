@@ -204,6 +204,27 @@ How to find files recursively in given folder?
 > There are few approaches described in [this snippet](https://gitlab.com/snippets/11504).
  
 
+## Log file
+How to do logging in Java? It wasn't explained in the course.
+
+> Yes, proper logging in java wasn't covered in this course.   
+You should just create file on given path and write line for each executed operation.  
+Expected format is `operation;original file;new file`. For example:  
+```
+DEL;work/src/job1/a.png
+MV;work/src/job1/sub/folder/jpg.gif;work/dest/pictures/jpg.gif
+CP;work/src/job1/b.jpg;work/dest/pictures/b.jpg
+```
+
+## Absolute vs relative file path
+Should I use relative or absolute paths?
+> Provided tests generate job files with absolute paths.  
+Your program should handle both relative and absolute paths. It usually works out of the box. 
+
+What about logfile I generate?
+>Your generated logfile may contain absolute or relative paths. Choice is up to you. Both are ok.  
+However be consistent. If you choose to write absolute paths to log, then always write abslute path and vice versa.
+
 ## Multiple files with same name
 What if there are multiple files with same file name?  
 For instance this, in `root` folder:

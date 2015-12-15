@@ -1,6 +1,6 @@
 **Publication date:** 12. week of the semester 
 
-**Submission deadline:** 2. week of the examination period
+**Submission deadline:** 2. week of the examination period (Friday, January 15)
 
 Homework assignment no. 3, FileManager
 ====================================

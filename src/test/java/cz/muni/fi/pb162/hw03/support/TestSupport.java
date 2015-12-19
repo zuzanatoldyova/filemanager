@@ -87,16 +87,16 @@ public class TestSupport extends ExternalResource {
     }
 
     /**
-     * Create platform specific process executor.
+     * Create process executor. <br />
      *
-     * @return
+     * This method was originally returning WindowsExecutor or UnixExecutor,
+     * depending on current OS, but due to windows incompatibilities
+     * added library ApacheCommons for copy and delete operations.
+     *
+     * @return instance of executor class
      */
     private static NativeExecutor createNativeExecutor() {
-        String os = System.getProperty("os.name");
-        if (os.toLowerCase().contains("windows"))
-            return new WindowsExecutor();
-        else
-            return new UnixExecutor();
+        return new ApacheCommonsExecutor();
     }
 
     /**

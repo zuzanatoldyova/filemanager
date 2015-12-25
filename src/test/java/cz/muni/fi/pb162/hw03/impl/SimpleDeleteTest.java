@@ -47,7 +47,7 @@ public class SimpleDeleteTest {
 
     @Test
     public void testRecursiveDelete() {
-        assertFalse("File subfolder/ " + SHOULD_BE_DELETED + " should exist after test.", Files.exists(TestSupport.subPath(testSupport.getJobSrc(), "subfolder", SHOULD_BE_DELETED)));
+        assertFalse("File subfolder/ " + SHOULD_BE_DELETED + " should not exist after test.", Files.exists(TestSupport.subPath(testSupport.getJobSrc(), "subfolder", SHOULD_BE_DELETED)));
     }
 
     @Test

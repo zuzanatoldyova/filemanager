@@ -69,7 +69,7 @@ public class SimpleDeleteTest {
 
         for (String line : logLines) {
             String[] item = line.split(";");
-            assertEquals("Log line must be in format <op>:<absolute path to file>", 2, item.length);
+            assertEquals("Log line must be in format <op>;<absolute path to file>", 2, item.length);
             assertEquals("It must be delete op", "DEL", item[0]);
             Path p = Paths.get(item[1]);
             assertTrue("It must contain absolute path to file", p.isAbsolute());

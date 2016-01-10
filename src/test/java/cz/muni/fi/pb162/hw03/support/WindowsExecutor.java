@@ -40,11 +40,21 @@ public class WindowsExecutor implements NativeExecutor {
                 "/c", "robocopy",
                 from.toAbsolutePath().toString(),
                 subPath(to.toAbsolutePath(), from.getFileName().toString()).toString(),
-                "/E");
+                "/E",
+                prepareRobocopyLog());
 
         if (exitValue >= 4) {
             // robocopy exit codes: http://ss64.com/nt/robocopy-exit.html
-            throw new IOException(String.format("Failed to copy files from %s to %s", from, to));
+            throw new IOException(String.format("Failed to copy (exit code %s) files from %s to %s", exitValue, from, to));
         }
     }
+
+    private static String prepareRobocopyLog() throws IOException {
+        Path log = Paths.get("robocopy_log.txt");
+        if (!Files.exists(log)) {
+            Files.createFile(log);
+        }
+        return "/log:\"" + log.toAbsolutePath().toString() + "\"";
+    }
+
 }

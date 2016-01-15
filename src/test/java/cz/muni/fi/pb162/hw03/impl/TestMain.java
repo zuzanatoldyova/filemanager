@@ -51,7 +51,7 @@ public class TestMain {
             );
         });
 
-        Main.main(new String[0]);
+        Application.main(new String[0]);
     }
 
     @Test
@@ -73,7 +73,7 @@ public class TestMain {
 
         String jobFilePath = testSupport.JOB_FILE_PATH.toString();
 
-        Main.main(new String[] {jobFilePath, logPath.toString()});
+        Application.main(new String[] {jobFilePath, logPath.toString()});
     }
 
     @Test
@@ -92,6 +92,6 @@ public class TestMain {
         Path logPath = Paths.get("logs", "somelog.log").toAbsolutePath();
 
         // it should end with exit(1) and don't print whole stacktrace, just few lines describing the issue
-        Main.main(new String[] {"this/obviously does not exist", logPath.toString()});
+        Application.main(new String[] {"this/obviously does not exist", logPath.toString()});
     }
 }
